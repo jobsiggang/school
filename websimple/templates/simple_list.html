@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>나의 웹서비스 개발</title>
+  </head>
+  <body>
+    <h1>주소목록</h1>
+    <p>
+      <a href="/simplecreate">입력화면으로 가기 하이퍼링크</a>
+    </p>
+    <ol id="id_user">
+      여기에 목록이 추가됨
+    </ol>
+  </body>
+  <script>
+    let data={{datatojson|tojson}}; //중요!!플라스크 서버에서 온 값을 json코드화
+    let name,tel,id;
+    let st=""
+    for(let i=0;i<data.length;i++){
+        id=data[i]['id']
+        name=data[i]['name'];
+        url=data[i]['url'];
+        st=st+`<li><a href ="simpleread/${id}">🌻${name}</a>의 주소는 <a href="${url}" target="_blak">${url}</a>  입니다.</li>`;//버튼으로바꿀수 있어요
+    }
+    document.querySelector('#id_user').innerHTML=st;
+  </script>
+</html>

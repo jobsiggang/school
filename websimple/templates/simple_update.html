@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>나의 웹서비스 개발</title>
+  </head>
+  <body>
+    <h1 id="id_id">변경할 아이디가 들어갈 부분</h1>
+    <form
+      action="아이디와함께 업데이트할 주소로 이동"
+      method="POST"
+      id="id_form"
+    >
+      <label>이름</label>
+      <input type="text" id="id_name" name="name" />
+      <label>웹주소</label>
+      <input type="text" id="id_url" name="url" /><br />
+      <p>소개말</p>
+      <textarea
+        id="id_content"
+        name="content"
+        style="width: 400px; height: 200px"
+      ></textarea>
+      <br />
+      <button type="submit">수정저장</button>
+      <button type="button" onclick='window.location.href = "/simplelist";'>
+        목록으로
+      </button>
+    </form>
+  </body>
+  <script>
+    let data={{selected|tojson}};
+     document.querySelector('#id_id').innerHTML=`아이디 ${data['id']}의 정보를 수정하세요'`;
+     document.querySelector('#id_name').value=data['name'];
+     document.querySelector('#id_url').value=data['url'];
+     document.querySelector('#id_content').innerHTML=data['content'];
+     document.querySelector('#id_form').action=`/simpleupdate/${data['id']}`; //업데이트할 주소와 아이디가들어감
+  </script>
+</html>

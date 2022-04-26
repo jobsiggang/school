@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>나의 웹서비스 개발</title>
+  </head>
+  <body>
+    <h1>구름ide url주소를 등록해 주세요</h1>
+    <form action="/simplecreate" method="POST">
+      <label>이름</label>
+      <input type="text" id="id_name" name="name" />
+      <label>url</label>
+      <input type="text" id="id_url" name="url" /><br />
+      <label>소개말</label><br>
+      <textarea id="id_content" name="content" style="width : 400px; height: 200px"></textarea><br>
+      <button type="submit">저장</button>
+      <button type="reset">초기화</button>
+      <button type="button" onclick='window.location.href = "/simplelist";'>
+
+    </form>
+      목록
+    </button>
+  </body>
+</html>
